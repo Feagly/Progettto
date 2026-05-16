@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Un sito web</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
 </head>
 <body>
     <header>
@@ -21,30 +21,3 @@
     </footer>
 </body>
 </html>
-2.3 Crea templates/home.html (con immagine):
-html{% extends "base.html" %}
-{% block content %}
-<h3 style="text-align: center">{{ text }}</h3>
-<br>
-<div style="text-align: center">
-    <img src="{{ url_for('static', path='sunset.jpg') }}" alt="sunset">
-</div>
-{% endblock %}
-2.4 Crea templates/products.html (tabella prodotti dinamica):
-html{% extends "base.html" %}
-{% block content %}
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Location</th>
-    </tr>
-    {% for p in product_list %}
-    <tr>
-        <td>{{ p.name }}</td>
-        <td>{{ p.price }}</td>
-        <td>{{ p.location }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% endblock %}

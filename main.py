@@ -11,7 +11,7 @@ app.mount("/static", StaticFiles(directory = "static"), name = "static")
 def home(request: Request):
     return templates.TemplateResponse(request=request, name="home.html", context={"text": "welcome to the store"})
 
-@app.get("/products", response_class=HTMLResponse)
+@app.get("/products", response_class=HTMLResponse, name= "products")
 def products(request: Request):
     product_list = [{"name": "Tastiera Meccanica", "price": 8.99, "location": "Corsia A"}]
     return templates.TemplateResponse(request=request, name="products.html", context={"product_list": product_list})
