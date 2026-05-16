@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container" style="max-width: 400px; margin: 20px auto; font-family: Arial, sans-serif;">
+    <h2 style="text-align: center;">Aggiungi un Nuovo Prodotto</h2>
+
+    <form action="/insert_product_data" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+
+        <div>
+            <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Nome Prodotto:</label>
+            <input type="text" id="name" name="name" required placeholder="Es. Mouse Wireless"
+                   style="width: 100%; padding: 8px; box-sizing: border-box;">
+        </div>
+
+        <div>
+            <label for="price" style="display: block; margin-bottom: 5px; font-weight: bold;">Prezzo (€):</label>
+            <input type="number" id="price" name="price" step="0.01" required placeholder="Es. 19.99"
+                   style="width: 100%; padding: 8px; box-sizing: border-box;">
+        </div>
+
+        <div>
+            <label for="location" style="display: block; margin-bottom: 5px; font-weight: bold;">Posizione nel Negozio:</label>
+            <input type="text" id="location" name="location" required placeholder="Es. Corsia C"
+                   style="width: 100%; padding: 8px; box-sizing: border-box;">
+        </div>
+
+        <button type="submit" style="padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; font-size: 16px;">
+            Salva Prodotto
+        </button>
+    </form>
+</div>
+{% endblock %}
